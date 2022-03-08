@@ -30,7 +30,7 @@ Para cada palavra do jogo é calculado quantas palavras possíveis serão retorn
 possible_words("errei", ["a", "a", "p", "v", "p"]).size
 ```
 
-Retorna 39 palavras, depois se calcula a probabilidade desse padrão ser retornado para o começo do jogo iremos ter 39/10588 -> 0,36% de chance
+No exemplo com "errei", é retornado 39 palavras, depois se calcula a probabilidade desse padrão ser retornado para o começo do jogo iremos ter 39/10588 -> 0,36% de chance
 
 calculando a "informação" dessa palavra para esse caso temos:
 
@@ -39,9 +39,9 @@ inf = CMath.log2(1/0.003683415) * 0.003683415
 0.029779453816910016
 ```
 
-E somando todas as informações por todos os padrões possíveis, vamos ter um score para errei.
+E somando todas as informações por todos os padrões possíveis, vamos ter um score para "errei".
 
-Repetimos esse processo para todas as 10588 palavras para ter uma lista com valor, que rankeado será utilizado para a primeira palavra do jogo.
+Repetimos esse processo para todas as 10588 palavras, para ter uma lista com scores que rankeado será utilizado para a primeira palavra do jogo.
 
 Neste programa a primeira palavra escolhida foi "arari" (ler disclaimer)
 
