@@ -248,13 +248,18 @@ def process_engine(result, target, word, word_cloud, exclude_words, attempt)
   new_word_cloud = possible_words(word, pattern, word_cloud, exclude_words)
   new_word_cloud_size = new_word_cloud.size
   puts "!!!! CLOUD SIZE -> #{new_word_cloud_size} - #{attempt}!!!!!"
-  second_word = if attempt >= 3 || new_word_cloud_size <= 10
+  second_word = nil
+
+  if attempt >= 4 || new_word_cloud_size <= 10
     words = @wfreq.select{|x| new_word_cloud.include?(x[0]) }.sort_by{|a| a[1] }
     puts "!!!! RUN WFREQ #{words.last(10)} !!!!!"
-    words.last[0]
-  else
-    rank_words_score(new_word_cloud).sort_by{|a, b| [a.values.first[0], a.values.first[1]] }.last&.keys&.first
+    second_word = words.last[0] if words.size > 0
   end
+
+  if second_word.nil?
+    second_word = rank_words_score(new_word_cloud).sort_by{|a, b| [a.values.first[0], a.values.first[1]] }.last&.keys&.first
+  end
+
   result = "0"
   result = "-1" if new_word_cloud.empty? || second_word == nil
 

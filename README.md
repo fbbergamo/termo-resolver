@@ -45,6 +45,8 @@ Repetimos esse processo para todas as 10588 palavras, para ter uma lista com sco
 
 Neste programa a primeira palavra escolhida foi "arari" (ler disclaimer)
 
+Para o final do jogo se usa uma rank de frequencia
+
 # Setup
 Instalar Ruby 2.7
 
@@ -62,7 +64,7 @@ irb
 
 ## Inspiração e referências
 
-Dicionario de frequencia retirado de https://github.com/fserb/pt-br
-https://www.youtube.com/watch?v=v68zYyaEmEA
-https://www.youtube.com/watch?v=fRed0Xmc2Wg
-https://github.com/luxedo/botinho-do-termo
+* Dicionario de frequencia retirado de https://github.com/fserb/pt-br
+* https://www.youtube.com/watch?v=v68zYyaEmEA
+* https://www.youtube.com/watch?v=fRed0Xmc2Wg
+* https://github.com/luxedo/botinho-do-termo
